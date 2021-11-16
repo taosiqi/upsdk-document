@@ -2,8 +2,8 @@
 
 ### 踩坑记录1 
 
-> [官方文档](https://opentools.95516.com/applet/#/)      
-> [银联开放平台接入技术gitee](https://gitee.com/openunionpay)    
+[官方文档](https://opentools.95516.com/applet/#/)
+[银联开放平台接入技术gitee](https://gitee.com/openunionpay)
 
 网上资料少，文档也写的一言难尽，云闪付有个qq群**457767672**，里面有他们的技术人员，一点要先加群！！！也可以去他们的gitee上面提issues.
 
@@ -27,7 +27,7 @@ upsdk.getLocationGps获取用户地理位置，ios和安卓返回结果不一致
 
 授权组件文档 https://opentools.95516.com/applet/#/docs/develop/oauth?id=_020203![img](https://cdn.nlark.com/yuque/0/2021/png/1023559/1629360349061-875a452f-0e4d-43d3-bc47-d00cc09b5015.png)
 
-```
+```javascript
 //mainjs
 import VueCupUI from './static/vue-cup-ui/lib/vue-cup-ui.umd.js'
 import './static/vue-cup-ui/lib/vue-cup-ui.css'
@@ -66,13 +66,13 @@ export default {
 
 ### 踩坑记录8
 
-ios下，从首页进入第二个页面，然后点击胶囊的重新载入按钮，这个时候会回到首页，但是导航栏会显示一个返回按钮，upsdk.setTitleStyle({backBtnVisible: 0})也无法去除，官方回复是框架问题
+ios下，从首页进入第二个页面，然后点击胶囊的重新载入按钮，这个时候会回到首页，但是导航栏会显示一个返回按钮，upsdk.setTitleStyle({backBtnVisible: 0})也无法去除，官方回复是框架问题（不要和document.title混用）
 
 
 
 ### 踩坑记录9
 
-```
+```javascript
 async pay() {
       let tn = await getTN()
       upsdk.pay({
